@@ -1,10 +1,15 @@
+#define BEGIN_STRESS 0
+#define DEBUG_QUICK_SORT 1
+#define DEBUG_INTRO_SORT 0
+
+#define ARRAY_SIZE 1e6
+
 #include <bits/stdc++.h>
 #include <chrono>
 #include <thread>
 #include "quicksort.cpp"
 #include "introsort.cpp"
 
-#define ARRAY_SIZE 1e6
 using namespace std;
 
 /**
@@ -20,12 +25,12 @@ using namespace std;
  * make sure to change the code in main to match your change
  * 
  */
-vector<int> generate_vector(bool isRandom)
-{
-
+vector<int> generate_vector(bool isRandom) {
+    vector<int> randoms;
     /*
         complete the code here;
     */
+    return randoms;
 }
 
 /**
@@ -34,6 +39,7 @@ vector<int> generate_vector(bool isRandom)
  * generate 1d vector 
  * compare their output and runnig time
 */
+#if BEGIN_STRESS
 int main(int argc, char **argv)
 {
 
@@ -76,3 +82,4 @@ int main(int argc, char **argv)
     }
     return 0;
 }
+#endif
