@@ -1,34 +1,27 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-
+#include "RUNING.h"
+#include "sorting.h"
 // Function to perform heapsort on the given range of elements
-void heapsort(vector<int>::iterator begin, vector<int>::iterator end)
-{
-    make_heap(begin, end);
-    sort_heap(begin, end);
+void heapsort(vector<int>::iterator begin, vector<int>::iterator end) {
+    std::make_heap(begin, end);
+    std::sort_heap(begin, end);
 }
 
-/**
- * implement introsort algorithm
- * 
- * @param
- *  a --> int array to be sorted
- *  begin --> iterator points to the lower index
- *  end --> iterator points to the maximum index
- *  max_depth --> number of maximum recursion depth before changing to heapsort
- * 
- * @return
- * 
-*/
-void introsort(vector<int> a, vector<int>::iterator begin, vector<int>::iterator end, int max_depth){
+void introsort(vector<int>& arr, vector<int>::iterator start, vector<int>::iterator end, int max_depth){
+    if(arr.size() <= 1) return;
+    else if (max_depth == 0) heapsort(start, end);
+    else if(std::distance(start, end) > 0){
+        auto splitPosition = partition(start, end);
+        introsort(arr, start, splitPosition, max_depth-1);
+        introsort(arr, splitPosition+1, end, max_depth-1);
+    }
     
 }
 
 #if DEBUG_INTRO_SORT
 int main(){
     std::vector<int> nums{-1,5,7,2,3,4,0,17,0,0,17};
-    introsort(nums, begin(nums), end(nums));
+    int max_depth = floor(std::log(nums.size()));
+    introsort(nums, begin(nums), end(nums), max_depth);
     for(auto num : nums)
         cout << num << std::endl;
 }
