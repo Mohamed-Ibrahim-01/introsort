@@ -1,11 +1,5 @@
-#include <vector>
-#include <iostream>
-using std::vector;
-using std::cout;
-
-void quicksort(vector<int> arr, vector<int>::iterator start, vector<int>::iterator end);
-vector<int>::iterator partition(vector<int>::iterator start, vector<int>::iterator end);
-
+#include "RUNING.h"
+#include "sorting.h"
 /**
  * Quick sort algorithm for vector of integers
  * 
@@ -17,7 +11,7 @@ vector<int>::iterator partition(vector<int>::iterator start, vector<int>::iterat
  * @return
  * void as quicksort is an inplace sorting algorithm
 */
-void quicksort(vector<int> arr, vector<int>::iterator start, vector<int>::iterator end){
+void quicksort(vector<int>& arr, vector<int>::iterator start, vector<int>::iterator end){
     if(std::distance(start, end) > 0){
         auto splitPosition = partition(start, end);
         quicksort(arr, start, splitPosition);
@@ -29,7 +23,7 @@ void quicksort(vector<int> arr, vector<int>::iterator start, vector<int>::iterat
 vector<int>::iterator partition(vector<int>::iterator start, vector<int>::iterator end){
     auto pivot = end-1;
     auto last_smaller = start -1; 
-    for(auto curr_num = start; curr_num != end-1; curr_num++){ 
+    for(auto curr_num = start; curr_num != end-1; curr_num++){
         if(*curr_num < *pivot ){
             auto first_greater = last_smaller+1;
             std::iter_swap(first_greater, curr_num);
