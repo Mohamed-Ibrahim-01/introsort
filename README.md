@@ -8,6 +8,9 @@
 ### References 
 [WIKI_Introsort](https://en.wikipedia.org/wiki/Introsort)
 
+### Compiling
+```g++ -o stress.out stress.cpp quicksort.cpp introsort.cpp```
+
 
 ### Implement this task using c++
 In this task you are required to fill 3 files
