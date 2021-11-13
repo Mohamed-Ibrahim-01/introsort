@@ -1,10 +1,21 @@
-#include "RUNING.h"
+#include "RUNNING.h"
 #include "sorting.h"
 // Function to perform heapsort on the given range of elements
 void heapsort(vector<int>::iterator begin, vector<int>::iterator end) {
     std::make_heap(begin, end);
     std::sort_heap(begin, end);
 }
+/**
+ * Intro sort algorithm for vector of integers
+ * 
+ * @param
+ *  a --> int array to be sorted
+ *  start --> iterator points to the lower index
+ *  end --> iterator points to the maximum index
+ * 
+ * @return
+ * void as quicksort is an inplace sorting algorithm
+*/
 
 void introsort(vector<int>& arr, vector<int>::iterator start, vector<int>::iterator end, int max_depth){
     if(arr.size() <= 1) return;

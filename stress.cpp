@@ -1,4 +1,4 @@
-#include "RUNING.h"
+#include "RUNNING.h"
 #define ARRAY_SIZE 1e3
 
 #include <iostream>

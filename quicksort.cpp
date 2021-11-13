@@ -1,4 +1,4 @@
-#include "RUNING.h"
+#include "RUNNING.h"
 #include "sorting.h"
 /**
  * Quick sort algorithm for vector of integers
@@ -20,6 +20,16 @@ void quicksort(vector<int>& arr, vector<int>::iterator start, vector<int>::itera
 }
 
 
+/**
+ * Partitioning a vector using a pivot at the end 
+ * 
+ * @param
+ *  start --> iterator points to the lower index
+ *  end --> iterator points to the maximum index
+ * 
+ * @return
+ * pivot --> pivot index after partitioning the vector 
+*/
 vector<int>::iterator partition(vector<int>::iterator start, vector<int>::iterator end){
     auto pivot = end-1;
     auto last_smaller = start -1; 
